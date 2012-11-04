@@ -39,6 +39,9 @@ else
     if isfield(Parameters,'show_info')==0
         Parameters.show_info=1;
     end
+    if isfield(Parameters,'store_training_data')==0
+        Parameters.store_training_data=0;
+    end
     if isfield(Parameters,'ECOC')==0
         Parameters.ECOC=[];
     end

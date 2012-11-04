@@ -44,6 +44,8 @@ for i=positions % for each column of the coding matrix
         error('Exit: Base classifier bad defined for custom base classifier.');
     end
     Classifiers{length(Classifiers)+1}.classifier=Custom_classifier; % save current classifier and data
-    Classifiers{length(Classifiers)}.FirstSet=FirstSet;
-    Classifiers{length(Classifiers)}.SecondSet=SecondSet;
+    if Parameters.store_training_data
+        Classifiers{length(Classifiers)}.FirstSet=FirstSet;
+        Classifiers{length(Classifiers)}.SecondSet=SecondSet;
+    end
 end
