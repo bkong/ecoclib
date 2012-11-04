@@ -8,6 +8,6 @@ function out = SVMTest(data,classifier,params)
 
   % since we aren't going to use predict's accuracy, etc. just make up some labels to use
   labels = ones(size(data,1),1);
-  out = predict(labels,sparse(data),classifier,paramStr);
+  out = predict(labels,sparse(double(data)),classifier,paramStr);
 
   rmpath(params.path)

@@ -26,7 +26,7 @@ function [classifier] = SVM(posData,negData,params)
   end
 
   labels = [ones(size(posData,1),1);-ones(size(negData,1),1)];
-  data = sparse([posData;negData]);
+  data = sparse(double([posData;negData]));
   classifier = train(labels,data,paramStr);
 
   rmpath(params.path)
